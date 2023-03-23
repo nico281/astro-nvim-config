@@ -1,6 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
-    -- ensure_installed = { "lua" },
+    'folke/tokyonight.nvim' -- ensure_installed = { "lua" },
   },
 }

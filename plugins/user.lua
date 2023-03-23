@@ -1,18 +1,13 @@
 return {
- {
-      "catppuccin/nvim",
-      as = "catppuccin",
-      config = function()
-        require("catppuccin").setup {}
-      end,
-    },
-    {
-     'folke/tokyonight.nvim',
-     as = 'tokyonight',
-     config = function()
-       require("tokyonight").setup {}
-     end,
-    },
+  { "catppuccin/nvim", name = "catppuccin" },
+
+  {
+    'folke/tokyonight.nvim',
+    as = 'tokyonight',
+    config = function()
+      require("tokyonight").setup {}
+    end,
+  },
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
   -- "andweeb/presence.nvim",
