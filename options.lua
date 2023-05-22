@@ -7,10 +7,13 @@ return {
     spell = false,         -- sets vim.opt.spell
     signcolumn = "auto",   -- sets vim.opt.signcolumn to auto
     wrap = false,          -- sets vim.opt.wrap
-    guifont = 'Recursive:h16, JetBrainsMono NFM:h16',
-    linespace = 50,
+    guifont = 'JetBrainsMono NFM:h16',
+    linespace = 120.0,
   },
   g = {
+    embark_terminal_italics = 1,
+    sonokai_enable_italic = 1,
+    --sonokai_transparent_background = 1,
     mapleader = " ",                 -- sets vim.g.mapleader
     autoformat_enabled = true,       -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
     cmp_enabled = true,              -- enable completion at start
@@ -19,7 +22,7 @@ return {
     icons_enabled = true,            -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
     neovide_refresh_rate = 120,
-embark_terminal_italics = 1
+    --neovide_transparency = 0.9
   },
 }
 -- If you need more control, you can use the function()...end notation

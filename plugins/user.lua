@@ -6,11 +6,54 @@ return {
       require("tokyonight").setup {}
     end,
   },
+  {'maxmx03/dracula.nvim'},
+  {"rebelot/kanagawa.nvim"},
+  { 'rose-pine/neovim', name = 'rose-pine' },
   {
     "catppuccin/nvim",
     as = 'catppuccin',
     config = function()
       require("catppuccin").setup {
+flavour = "mocha", -- latte, frappe, macchiato, mocha
+    background = { -- :h background
+        light = "latte",
+        dark = "mocha",
+    },
+    transparent_background = false,
+    show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+    term_colors =true,
+    dim_inactive = {
+        enabled = false,
+        shade = "dark",
+        percentage = 0.15,
+    },
+    no_italic = false, -- Force no italic
+    no_bold = false, -- Force no bold
+    styles = {
+        comments = { "italic" },
+        conditionals = { "italic" },
+        loops = {},
+        functions = {"italic"},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+        operators = {},
+    },
+    color_overrides = {},
+    custom_highlights = {},
+    integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        telescope = true,
+        notify = false,
+        mini = false,
+        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+    },
       }
     end,
   },
@@ -33,36 +76,8 @@ end
       local null_ls = require "null-ls"
 
       mason_null_ls.setup(opts)      -- run setup
-
+      
     end,
-  },
-  {
-    "lewis6991/hover.nvim",
-    config = function()
-      require("hover").setup {
-        init = function()
-          -- Require providers
-          require("hover.providers.lsp")
-          -- require('hover.providers.gh')
-          -- require('hover.providers.gh_user')
-          -- require('hover.providers.jira')
-          -- require('hover.providers.man')
-          -- require('hover.providers.dictionary')
-        end,
-
-        preview_opts = {
-          border = nil
-        },
-        -- Whether the contents of a currently open hover window should be moved
-        -- to a :h preview-window when pressing the hover keymap.
-        preview_window = false,
-        title = true
-      }
-
-      -- Setup keymaps
-      vim.keymap.set("n", "K", require("hover").hover, { desc = "hover.nvim" })
-      vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
-    end
   },
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
